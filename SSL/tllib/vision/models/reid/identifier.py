@@ -1,7 +1,3 @@
-"""
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 from typing import List, Dict, Optional
 import torch
 import torch.nn as nn

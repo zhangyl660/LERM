@@ -233,7 +233,7 @@ def train(labeled_train_iter: ForeverDataIterator, unlabeled_train_iter: Forever
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='FlexMatch for Semi Supervised Learning')
+    parser = argparse.ArgumentParser(description='FlexMatch + LERM for Semi Supervised Learning')
     # dataset parameters
     parser.add_argument('root', metavar='DIR',
                         help='root path of dataset')
@@ -283,7 +283,7 @@ if __name__ == '__main__':
                         help='parameter for lr scheduler')
     parser.add_argument('--wd', '--weight-decay', default=5e-4, type=float, metavar='W',
                         help='weight decay (default:5e-4)')
-    parser.add_argument('-j', '--workers', default=8, type=int, metavar='N',
+    parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
                         help='number of data loading workers (default: 4)')
     parser.add_argument('--epochs', default=60, type=int, metavar='N',
                         help='number of total epochs to run (default: 60)')

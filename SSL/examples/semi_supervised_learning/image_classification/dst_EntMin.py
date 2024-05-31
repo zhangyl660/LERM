@@ -244,7 +244,7 @@ def train(labeled_train_iter: ForeverDataIterator, unlabeled_train_iter: Forever
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Debiased Self-Training for Semi Supervised Learning')
+    parser = argparse.ArgumentParser(description='Debiased Self-Training + EntMin for Semi Supervised Learning')
     # dataset parameters
     parser.add_argument('root', metavar='DIR',
                         help='root path of dataset')

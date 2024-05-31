@@ -1,7 +1,3 @@
-"""
-@author: Yifei Ji
-@contact: jiyf990330@163.com
-"""
 import torch
 import torch.nn as nn
 

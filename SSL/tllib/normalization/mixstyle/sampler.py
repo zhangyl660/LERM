@@ -1,7 +1,3 @@
-"""
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 import random
 import copy
 from torch.utils.data.dataset import ConcatDataset

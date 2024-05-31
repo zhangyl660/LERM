@@ -1,7 +1,4 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
+
 import itertools
 import random
 import numpy as np

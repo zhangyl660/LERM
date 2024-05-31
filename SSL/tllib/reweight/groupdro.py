@@ -1,8 +1,3 @@
-"""
-Modified from https://github.com/facebookresearch/DomainBed
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 import torch
 
 

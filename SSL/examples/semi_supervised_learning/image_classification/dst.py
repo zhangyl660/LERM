@@ -288,7 +288,7 @@ if __name__ == '__main__':
                         help='parameter for lr scheduler')
     parser.add_argument('--wd', '--weight-decay', default=5e-4, type=float, metavar='W',
                         help='weight decay (default:5e-4)')
-    parser.add_argument('-j', '--workers', default=8, type=int, metavar='N',
+    parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
                         help='number of data loading workers (default: 4)')
     parser.add_argument('--epochs', default=60, type=int, metavar='N',
                         help='number of total epochs to run (default: 60)')

@@ -1,7 +1,3 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
 import numpy as np
 import os
 import tqdm

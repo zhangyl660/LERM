@@ -1,7 +1,3 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
 from typing import Optional, List, Dict, Tuple, Callable
 import torch.nn as nn
 import torch.nn.functional as F

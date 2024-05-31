@@ -1,8 +1,3 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
-
 from torchvision.datasets.folder import ImageFolder
 import random
 

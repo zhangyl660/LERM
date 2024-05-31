@@ -233,7 +233,7 @@ def train(labeled_train_iter: ForeverDataIterator, unlabeled_train_iter: Forever
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='FlexMatch for Semi Supervised Learning')
+    parser = argparse.ArgumentParser(description='FlexMatch + BNM for Semi Supervised Learning')
     # dataset parameters
     parser.add_argument('root', metavar='DIR',
                         help='root path of dataset')

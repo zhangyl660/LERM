@@ -1,7 +1,3 @@
-"""
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 from . import MixStyle
 from tllib.vision.models.reid.resnet import ReidResNet
 from tllib.vision.models.resnet import ResNet, load_state_dict_from_url, model_urls, BasicBlock, Bottleneck

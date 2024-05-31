@@ -1,7 +1,5 @@
 """
 Modified from https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
 """
 import torch
 import torch.nn as nn

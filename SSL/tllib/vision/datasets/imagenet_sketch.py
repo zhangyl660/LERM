@@ -1,7 +1,3 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
 from typing import Optional
 import os
 from torchvision.datasets.imagenet import ImageNet

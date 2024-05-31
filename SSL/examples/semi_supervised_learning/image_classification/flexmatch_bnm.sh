@@ -12,20 +12,20 @@ CUDA_VISIBLE_DEVICES=0 python flexmatch_bnm.py /data/SSL/cifar10 -d CIFAR10 --tr
 # CIFAR 100
 CUDA_VISIBLE_DEVICES=0 python flexmatch.py /data/SSL/cifar100 -d CIFAR100 --train-resizing 'cifar' --val-resizing 'cifar' \
   --norm-mean 0.5071 0.4867 0.4408 --norm-std 0.2675 0.2565 0.2761 --num-samples-per-class 4 -a resnet50 \
-  --lr 0.003 --finetune --threshold 0.8 --seed 0 --log logs/cifar100/flexmatch/4_labels_per_class
+  --lr 0.003 --finetune --threshold 0.8 --seed 0 --log logs/cifar100/flexmatch/bnm/4_labels_per_class
 
 CUDA_VISIBLE_DEVICES=0 python flexmatch.py /data/SSL/cifar100 -d CIFAR100 --train-resizing 'cifar' --val-resizing 'cifar' \
   --norm-mean 0.5071 0.4867 0.4408 --norm-std 0.2675 0.2565 0.2761 --num-samples-per-class 1 -a resnet50 \
-  --lr 0.003 --finetune --threshold 0.8 --seed 0 --log logs/cifar100/flexmatch/1_labels_per_class
+  --lr 0.003 --finetune --threshold 0.8 --seed 0 --log logs/cifar100/flexmatch/bnm/1_labels_per_class
 
 
 # ======================================================================================================================
 # DTD
 CUDA_VISIBLE_DEVICES=0 python flexmatch_bnm.py /data/SSL/DTD -d DTD --num-samples-per-class 4 -a resnet50 \
-  --lr 0.001 --finetune --threshold 0.9 --seed 0 --log logs/DTD/flexmatch/BNM/4_labels_per_class
+  --lr 0.001 --finetune --threshold 0.9 --seed 0 --log logs/DTD/flexmatch/bnm/4_labels_per_class
 
 CUDA_VISIBLE_DEVICES=0 python flexmatch_bnm.py /data/SSL/DTD -d DTD --num-samples-per-class 1 -a resnet50 \
-  --lr 0.001 --finetune --threshold 0.9 --seed 0 --log logs/DTD/flexmatch/BNM/1_labels_per_class
+  --lr 0.001 --finetune --threshold 0.9 --seed 0 --log logs/DTD/flexmatch/bnm/1_labels_per_class
 
 
 

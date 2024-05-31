@@ -1,7 +1,4 @@
-"""
-@author: Ying Jin
-@contact: sherryying003@gmail.com
-"""
+
 from typing import Optional
 import torch
 import torch.nn as nn

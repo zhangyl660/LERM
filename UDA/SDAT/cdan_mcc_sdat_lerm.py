@@ -281,7 +281,7 @@ def train(train_source_iter: ForeverDataIterator, train_target_iter: ForeverData
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='CDAN+MCC with SDAT for Unsupervised Domain Adaptation')
+        description='CDAN+MCC with SDAT + LERM for Unsupervised Domain Adaptation')
     # dataset parameters
     parser.add_argument("--pseudo_datapath", type=str, default='cdan',
                         help="Path to the output pseudo_label")

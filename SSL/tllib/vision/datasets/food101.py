@@ -1,7 +1,3 @@
-"""
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 from torchvision.datasets.folder import ImageFolder
 import os.path as osp
 from ._util import download as download_data, check_exits

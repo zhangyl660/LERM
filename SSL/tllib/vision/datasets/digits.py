@@ -1,7 +1,3 @@
-"""
-@author: Junguang Jiang, Baixu Chen
-@contact: JiangJunguang1123@outlook.com, cbx_99_hasta@outlook.com
-"""
 import os
 from typing import Optional, Tuple, Any
 from .imagelist import ImageList

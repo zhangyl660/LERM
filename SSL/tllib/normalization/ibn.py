@@ -1,8 +1,3 @@
-"""
-Modified from https://github.com/XingangPan/IBN-Net
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 import math
 import torch
 import torch.nn as nn

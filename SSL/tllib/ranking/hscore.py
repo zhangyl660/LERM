@@ -1,7 +1,3 @@
-"""
-@author: Yong Liu
-@contact: liuyong1095556447@163.com
-"""
 import numpy as np
 from sklearn.covariance import LedoitWolf
 

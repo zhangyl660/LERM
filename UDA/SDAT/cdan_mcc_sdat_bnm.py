@@ -84,9 +84,7 @@ def main(args: argparse.Namespace, eps=0.):
     # create model
     print("=> using model '{}'".format(args.arch))
     backbone = utils.get_model(args.arch, pretrain=not args.scratch)
-    # print(backbone)
     pool_layer = nn.Identity() if args.no_pool else None
-    # print(pool_layer)
     classifier = ImageClassifier(backbone, num_classes, bottleneck_dim=args.bottleneck_dim,
                                  pool_layer=pool_layer, finetune=not args.scratch).to(device)
     classifier_feature_dim = classifier.features_dim
@@ -278,7 +276,7 @@ def train(train_source_iter: ForeverDataIterator, train_target_iter: ForeverData
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='CDAN+MCC with SDAT for Unsupervised Domain Adaptation')
+        description='CDAN+MCC with SDAT + BNM for Unsupervised Domain Adaptation')
     # dataset parameters
     parser.add_argument("--pseudo_datapath", type=str, default='cdan',
                         help="Path to the output pseudo_label")

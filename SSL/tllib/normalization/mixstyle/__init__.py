@@ -1,8 +1,3 @@
-"""
-Modified from https://github.com/KaiyangZhou/mixstyle-release
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 import random
 import torch
 import torch.nn as nn

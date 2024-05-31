@@ -1,7 +1,3 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
 from typing import Optional, List, Tuple
 
 from torch.utils.data.dataloader import DataLoader

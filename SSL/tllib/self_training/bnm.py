@@ -1,7 +1,3 @@
-"""
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -9,12 +5,6 @@ import torch.nn.functional as F
 
 class BatchNuclearNormMaximization(nn.Module):
     """
-    Consistency loss between strong and weak augmented samples from `Unsupervised Data Augmentation for
-    Consistency Training (NIPS 2020) <https://arxiv.org/pdf/1904.12848v4.pdf>`_.
-
-    Args:
-        threshold (float): Confidence threshold.
-        temperature (float): Temperature.
 
     Inputs:
         - y_strong: unnormalized classifier predictions on strong augmented samples.

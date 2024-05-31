@@ -1,7 +1,3 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
 import os
 from typing import Optional
 from ..imagelist import ImageList

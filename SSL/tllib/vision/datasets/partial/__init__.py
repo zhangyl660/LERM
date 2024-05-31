@@ -1,7 +1,3 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
 from ..imagelist import ImageList
 from ..office31 import Office31
 from ..officehome import OfficeHome

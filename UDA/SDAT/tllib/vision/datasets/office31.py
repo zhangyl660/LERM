@@ -42,12 +42,6 @@ class Office31(ImageList):
         "A": "image_list/amazon.txt",
         "D": "image_list/dslr.txt",
         "W": "image_list/webcam.txt",
-        "A2D": "image_list/AtoD.txt",
-        "D2A": "image_list/DtoA.txt",
-        "W2A": "image_list/WtoA.txt",
-        "A2W": "image_list/AtoW.txt",
-        "D2W": "image_list/DtoW.txt",
-        "W2D": "image_list/WtoD.txt",
     }
     CLASSES = ['back_pack', 'bike', 'bike_helmet', 'bookcase', 'bottle', 'calculator', 'desk_chair', 'desk_lamp',
                'desktop_computer', 'file_cabinet', 'headphones', 'keyboard', 'laptop_computer', 'letter_tray',

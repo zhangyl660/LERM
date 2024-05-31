@@ -135,7 +135,6 @@ def train(labeled_train_iter: ForeverDataIterator, unlabeled_train_iter: Forever
         [batch_time, data_time, losses, cls_losses, self_training_losses, cls_accs],
         prefix="Epoch: [{}]".format(epoch))
 
-    # self_training_criterion = BatchNuclearNormMaximization().to(device)
     self_training_criterion = EntMin().to(device)
     # switch to train mode
     model.train()
@@ -196,7 +195,7 @@ def train(labeled_train_iter: ForeverDataIterator, unlabeled_train_iter: Forever
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='FixMatch for Semi Supervised Learning')
+    parser = argparse.ArgumentParser(description='EntMin for Semi Supervised Learning')
     # dataset parameters
     parser.add_argument('root', metavar='DIR',
                         help='root path of dataset')

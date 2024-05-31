@@ -1,7 +1,4 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
+
 from typing import Optional, List, Dict
 import torch
 import torch.nn as nn

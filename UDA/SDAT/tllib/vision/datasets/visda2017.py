@@ -37,7 +37,6 @@ class VisDA2017(ImageList):
     image_list = {
         "Synthetic": "image_list/train.txt",
         "Real": "image_list/validation.txt",
-        "S_R": "image_list/test_mcc.txt"
     }
     CLASSES = ['aeroplane', 'bicycle', 'bus', 'car', 'horse', 'knife',
                'motorcycle', 'person', 'plant', 'skateboard', 'train', 'truck']

@@ -1,7 +1,3 @@
-"""
-@author: Baixu Chen
-@contact: cbx_99_hasta@outlook.com
-"""
 import os
 from .imagelist import ImageList
 from ._util import download as download_data, check_exits

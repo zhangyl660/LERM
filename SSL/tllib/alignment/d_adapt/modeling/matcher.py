@@ -1,7 +1,4 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
+
 import torch
 from torch import Tensor, nn
 

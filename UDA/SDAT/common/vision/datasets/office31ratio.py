@@ -1,7 +1,3 @@
-"""
-@author: Junguang Jiang
-@contact: JiangJunguang1123@outlook.com
-"""
 from typing import Optional
 import os
 from .imagelistratio import ImageListRatio
@@ -45,18 +41,6 @@ class Office31ratio(ImageListRatio):
         "A": "image_list/amazon.txt",
         "D": "image_list/dslr.txt",
         "W": "image_list/webcam.txt",
-        "A2D": "image_list/AtoD.txt",
-        "A2W": "image_list/AtoW.txt",
-        "D2A": "image_list/DtoA.txt",
-        "D2W": "image_list/DtoW.txt",
-        "W2A": "image_list/WtoA.txt",
-        "W2D": "image_list/WtoD.txt",
-        "A2W_t": "image_list/AtoW_t.txt",
-        "W2D_t": "image_list/WtoD_t.txt",
-        "D2W_t": "image_list/DtoW_t.txt",
-        "D2A_t": "image_list/DtoA_t.txt",
-        "W2A_t": "image_list/WtoA_t.txt",
-        "A2D_t": "image_list/AtoD_t.txt",
     }
     CLASSES = ['back_pack', 'bike', 'bike_helmet', 'bookcase', 'bottle', 'calculator', 'desk_chair', 'desk_lamp',
                'desktop_computer', 'file_cabinet', 'headphones', 'keyboard', 'laptop_computer', 'letter_tray',
