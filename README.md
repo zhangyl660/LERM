@@ -6,14 +6,13 @@ Yulong Zhang, Yuan Yao, Shuhao Chen, Pengrong Jin, Yu Zhang, Jian Jin, Jiangang 
 
 
 ## Abatract
-Empirical Risk Minimization (ERM) has achieved great success in scenarios with sufficient labeled samples. However, many practical scenarios suffer from insufficient labeled samples. Under those scenarios, the ERM does not yield good performance as it cannot unleash the potential of unlabeled samples. In this paper, we rethink the guidance information to utilize unlabeled samples for handling those scenarios. By analyzing the learning objective of the ERM, we find that the guidance information for the labeled samples in a specific category is the corresponding label encoding. Inspired by this finding, we propose a Label-Encoding Risk Minimization (LERM) to mine the potential of unlabeled samples. It first estimates the label encodings through prediction means of unlabeled samples and then aligns them with their corresponding ground-truth label encodings. As a result, the LERM ensures both prediction discriminability and diversity and can be integrated into existing methods as a plugin. Theoretically, we analyze the relationship between the LERM and ERM. Empirically, we verify the superiority of the LERM under several label insufficient scenarios, including semi-supervised learning, unsupervised domain adaptation, and semi-supervised heterogeneous domain adaptation. 
+Empirical Risk Minimization (ERM) is fragile in scenarios with insufficient labeled samples. A vanilla extension of ERM to unlabeled samples is Entropy Minimization (EntMin), which employs the soft-labels of unlabeled samples to guide their learning. However, EntMin emphasizes prediction discriminability while neglecting prediction diversity. To alleviate this issue, in this paper, we rethink the guidance information to utilize unlabeled samples. By analyzing the learning objective of ERM, we find that the guidance information for the labeled samples in a specific category is the corresponding *label encoding*. Inspired by this finding, we propose a Label-Encoding Risk Minimization (LERM). It first estimates the label encodings through prediction means of unlabeled samples and then aligns them with their corresponding ground-truth label encodings. As a result, the LERM ensures both prediction discriminability and diversity and can be integrated into existing methods as a plugin. Theoretically, we analyze the relationships between LERM and ERM, as well as between LERM and EntMin. Empirically, we verify the superiority of the LERM under several label insufficient scenarios.
 
 ## Installation
 
 ##### Install from Source Code
 
 ```shell
-python setup.py install
 pip install -r requirements.txt
 ```
 
