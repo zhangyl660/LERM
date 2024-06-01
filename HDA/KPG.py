@@ -8,7 +8,6 @@ import argparse
 from sklearn import preprocessing  # Normalization data
 import add_dependencies as ad  # add some dependencies
 from run_tcn import run_tcn
-from run_KPG_tcn import run_KPG_tcn
 
 # Test
 # source_exp = [ad.E, ad.F, ad.G, ad.I]
@@ -35,24 +34,19 @@ results_name = 'KPGT2I'
 
 
 parser = argparse.ArgumentParser(
-    description='Simultaneous Semantic Alignment Network for Heterogeneous Domain Adaptation')
+    description='KPG function for Rethinking Guidance Information to Utilize Unlabeled Samples: A Label-Encoding Perspective')
 parser.add_argument('--alpha', type=float, default=0.05,
                     help='Trade-off parameter of transfer loss')
 parser.add_argument('--lr', type=float, default=0.001, help='Learning rate')
 parser.add_argument('--seed', type=int, default=1234, help='random_seed')
-parser.add_argument('--method', type=str, default='CCL', help="Options: BNM, ENT, BFM, FBNM, CCL , NO")
-parser.add_argument('--log_path', type=str, default='./log/', help="Options: BNM, ENT, BFM, FBNM, CCL , NO")
+parser.add_argument('--method', type=str, default='NO', help="Options: BNM, ENT, LERM_L1, LERM_KL, LERM_L2, NO")
+parser.add_argument('--log_path', type=str, default='./log/', help="Options: BNM, ENT, LERM_L1, LERM_KL, LERM_L2, NO")
 parser.add_argument('--iter', type=int, default=100, help='iter amount')
 args = parser.parse_args()
 
 
 if __name__ == "__main__":
     # parameters
-    # T = 100 # the total iter number
-    # alpha = 0.05 #control mean loss
-    # tau = 0.01 # control regularization term, cannot be an integer
-    # lr = 0.001 # learning rate
-    # d = 600 # the dimension of common subspace
     T = args.iter  # the total iter number
     alpha = args.alpha  # control mean loss
     tau = 0.01  # control regularization term, cannot be an integer

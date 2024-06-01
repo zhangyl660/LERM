@@ -60,4 +60,3 @@ def run_tcn(acc_tcn_list, config, config_data):
         print("the accuracy of f(Xu) is: " + str(Acc_Xu))
 
         acc_tcn_list.append(Acc_Xu)  # record accuracy of Xu
-        # np.savetxt('results/Convergence-C-A'+'.csv', loss_tcn, delimiter = ',')

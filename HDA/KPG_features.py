@@ -24,7 +24,7 @@ from keypointguide_POT.sinkhorn import sinkhorn_log_domain
 warnings.filterwarnings('ignore')
 
 parser = argparse.ArgumentParser(
-    description='Simultaneous Semantic Alignment Network for Heterogeneous Domain Adaptation')
+    description='Rethinking Guidance Information to Utilize Unlabeled Samples: A Label-Encoding Perspective')
 
 parser.add_argument('--source', type=str, default='SAS', help='Source domain')
 parser.add_argument('--target', type=str, default='TAD', help='Target domain')

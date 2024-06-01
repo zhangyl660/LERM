@@ -12,7 +12,7 @@ class tcn(object):
     def __init__(self, sess, config):
         self.sess = sess
         self.ds = config['ds']
-        self.dt = cnfig['dt']
+        self.dt = config['dt']
         self.ns = config['ns']
         self.nl = config['nl']
         self.nu = config['nu']
@@ -121,7 +121,6 @@ class tcn(object):
         elif self.method == "ENT":
             epsilon = tf.constant(1e-6, tf.float32)
             self.transfer_loss = tf.reduce_mean(-tf.reduce_sum(self.Pred_Xu * tf.math.log(self.Pred_Xu + epsilon), 1))
-            # transfer_loss = -torch.mean(torch.sum(softmax_tgt * torch.log(softmax_tgt + 1e-8), dim=1)) / torch.log(torch.tensor(softmax_tgt.shape[1]))
         else:
             self.transfer_loss = tf.constant(0,dtype=tf.float32)
 
