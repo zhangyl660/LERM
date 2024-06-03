@@ -31,20 +31,18 @@ def run_tcn(acc_tcn_list, config, config_data):
         # loss_tcn = np.zeros((T,1))
         total_loss_list = []
         cls_loss_list = []
-        ccl_loss_list = []
-        label_loss_list = []
+        transfer_loss_list = []
         acc_list = []
 
         for t in range(T):
             # ------------------------------------------#
             # training feature network
             sess.run(model.train_step, feed_dict=train_feed)
-            total_loss, cls_loss, ccl_loss, label_loss = sess.run(
-                [model.loss, model.loss_Xa, model.unlabel_ccl_loss, model.label_ccl_loss], feed_dict=train_feed)
+            total_loss, cls_loss, transfer_loss, label_loss = sess.run(
+                [model.loss, model.loss_Xa, model.transfer_loss], feed_dict=train_feed)
             total_loss_list.append(total_loss)
             cls_loss_list.append(cls_loss)
-            ccl_loss_list.append(ccl_loss)
-            label_loss_list.append(label_loss)
+            transfer_loss_list.append(transfer_loss)
 
             Acc_Xu = sess.run(model.Acc_Xu, feed_dict=train_feed)
             acc_list.append(Acc_Xu)
