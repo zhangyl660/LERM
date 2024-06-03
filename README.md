@@ -10,6 +10,8 @@ Empirical Risk Minimization (ERM) is fragile in scenarios with insufficient labe
 
 ## Installation
 
+We implement SSL and UDA in the Pytorch framework and implement SHDA in the Tensorflow framework.
+
 ##### Install from Source Code
 
 ```shell
@@ -17,7 +19,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-You can find scripts in the directory `SSL`, `UDA`, and `HDA`.
+You can find scripts in the directory `SSL`, `UDA`, and `SHDA`.
 
 ## Contact
 If you have any problem with our code or have some suggestions, including the future feature, feel free to contact 
