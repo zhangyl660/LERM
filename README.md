@@ -12,8 +12,6 @@ Empirical Risk Minimization (ERM) is fragile in scenarios with insufficient labe
 
 We implement SSL and UDA in the Pytorch framework and implement SHDA in the Tensorflow framework.
 
-## Install from Source Code
-
 For SSL and UDA
 
 ```shell
