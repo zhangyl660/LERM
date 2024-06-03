@@ -1,6 +1,6 @@
 # Rethinking Guidance Information to Utilize Unlabeled Samples: A Label-Encoding Perspective (ICML'24)
 
-Official PyTorch implementation of Rethinking Guidance Information to Utilize Unlabeled Samples: A Label-Encoding Perspective.
+Official Implementation of Rethinking Guidance Information to Utilize Unlabeled Samples: A Label-Encoding Perspective.
 
 Yulong Zhang, Yuan Yao, Shuhao Chen, Pengrong Jin, Yu Zhang, Jian Jin, Jiangang Lu.
 
@@ -10,14 +10,30 @@ Empirical Risk Minimization (ERM) is fragile in scenarios with insufficient labe
 
 ## Installation
 
-##### Install from Source Code
+We implement SSL and UDA in the Pytorch framework and implement SHDA in the Tensorflow framework.
+
+For SSL and UDA
 
 ```shell
 pip install -r requirements.txt
 ```
 
+For SHDA
+
+```shell
+XXXX XXXX XXXX XXXX XXXX XXXX
+
+XXXX XXXX XXXX XXXX XXXX XXXX
+
+XXXX XXXX XXXX XXXX XXXX XXXX
+
+XXXX XXXX XXXX XXXX XXXX XXXX
+
+```
+
+
 ## Usage
-You can find scripts in the directory `SSL`, `UDA`, and `HDA`.
+You can find scripts in the directory `SSL`, `UDA`, and `SHDA`.
 
 ## Contact
 If you have any problem with our code or have some suggestions, including the future feature, feel free to contact 
