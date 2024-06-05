@@ -1,17 +1,16 @@
 import scipy.io
 import tensorflow as tf
-
 import pandas as pd
 import numpy as np
 import utils
 from sklearn.manifold import TSNE
-from tcn import tcn
+from model import model
 import scipy.io as sio
 
-def run_tcn(acc_tcn_list, config, config_data):
+def run_model(acc_model_list, config, config_data):
     tf.set_random_seed(config['seed'])
     with tf.Session() as sess:
-        model = tcn(sess=sess, config=config)
+        model = model(sess=sess, config=config)
         # ------------------------------------------#
         Xs = config_data['Xs']
         Xl = config_data['Xl']
@@ -28,22 +27,10 @@ def run_tcn(acc_tcn_list, config, config_data):
                       model.Xl: Xl, model.Xl_label: Xl_label,
                       model.Xu: Xu, model.Xu_label: Xu_label}
 
-        # loss_tcn = np.zeros((T,1))
-        total_loss_list = []
-        cls_loss_list = []
-        transfer_loss_list = []
-        acc_list = []
-
         for t in range(T):
             # ------------------------------------------#
             # training feature network
             sess.run(model.train_step, feed_dict=train_feed)
-            total_loss, cls_loss, transfer_loss, label_loss = sess.run(
-                [model.loss, model.loss_Xa, model.transfer_loss], feed_dict=train_feed)
-            total_loss_list.append(total_loss)
-            cls_loss_list.append(cls_loss)
-            transfer_loss_list.append(transfer_loss)
-
             Acc_Xu = sess.run(model.Acc_Xu, feed_dict=train_feed)
             acc_list.append(Acc_Xu)
             if t % 50 == 0:
@@ -57,4 +44,4 @@ def run_tcn(acc_tcn_list, config, config_data):
         Acc_Xu = sess.run(model.Acc_Xu, feed_dict=train_feed) * 100  # Get the final accuracy of Xu
         print("the accuracy of f(Xu) is: " + str(Acc_Xu))
 
-        acc_tcn_list.append(Acc_Xu)  # record accuracy of Xu
+        acc_model_list.append(Acc_Xu)  # record accuracy of Xu

@@ -8,7 +8,7 @@ import add_dependencies as ad # add some dependencies
 import utils
 import pdb
 
-class tcn(object):
+class model(object):
     def __init__(self, sess, config):
         self.sess = sess
         self.ds = config['ds']
@@ -21,7 +21,6 @@ class tcn(object):
         self.tau = config['tau']
         self.d = config['d']
         self.lr = config['lr']
-
         self.method = config['method']
         self.create_model()
 
@@ -123,7 +122,6 @@ class tcn(object):
             self.transfer_loss = tf.reduce_mean(-tf.reduce_sum(self.Pred_Xu * tf.math.log(self.Pred_Xu + epsilon), 1))
         else:
             self.transfer_loss = tf.constant(0,dtype=tf.float32)
-
 
         #------------------------------------------#
         self.loss = self.loss_Xa + self.alpha*self.transfer_loss + self.loss_reg

@@ -1,5 +1,4 @@
 import os
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = "2"
 import multiprocessing
 import scipy.io as sio  # read .mat files
@@ -7,12 +6,10 @@ import numpy as np
 import argparse
 from sklearn import preprocessing  # Normalization data
 import add_dependencies as ad  # add some dependencies
-from run_tcn import run_tcn
-
+from run_model import run_model
 # -----------------------------------------#
 # read mat files
 # -----------------------------------------#
-
 # source_name = ["E", "F", "G", "I"]
 # target_name = ["S5", "S5", "S5", "S5"]
 # source_name = ["E", "F", "G", "I"]
@@ -43,7 +40,6 @@ parser.add_argument('--method', type=str, default='NO', help="Options: BNM, ENT,
 parser.add_argument('--log_path', type=str, default='./log/', help="Options: BNM, ENT, LERM_L1, LERM_KL, LERM_L2, NO")
 parser.add_argument('--iter', type=int, default=100, help='iter amount')
 args = parser.parse_args()
-
 # ===========================================================#
 # --------------------------------------------------------#
 if __name__ == "__main__":
@@ -59,10 +55,10 @@ if __name__ == "__main__":
     # ===========================================================#
     length = len(source_exp)
     iter = 3
-    acc_tcn_list = multiprocessing.Manager().list()
-    entropy_tcn_list = multiprocessing.Manager().list()
-    acc_tcn = np.zeros((iter, length))
-    # entropy_tcn = np.zeros((iter, length))
+    acc_model_list = multiprocessing.Manager().list()
+    entropy_model_list = multiprocessing.Manager().list()
+    acc_model = np.zeros((iter, length))
+    # entropy_model = np.zeros((iter, length))
 
     for i in range(0, length):
         print("Source domain: " + source_exp[i])
@@ -97,19 +93,19 @@ if __name__ == "__main__":
             config_data = {'Xs': Xs, 'Xl': Xl, 'Xu': Xu, 'Xs_label': Xs_label,
                            'Xl_label': Xl_label, 'Xu_label': Xu_label, 'T': T}
 
-            p = multiprocessing.Process(target=run_tcn, args=(acc_tcn_list, config, config_data))
+            p = multiprocessing.Process(target=run_model, args=(acc_model_list, config, config_data))
             p.start()
             p.join()
-            acc_tcn[j][i] = acc_tcn_list[i * iter + j]
-            # entropy_tcn[j][i] = entropy_tcn_list[i*iter+j]
-    print(np.mean(acc_tcn, axis=0))
-    print("acc mean:", np.mean(np.mean(acc_tcn, axis=0)))
-    # print("entorpy mean:",np.mean(entropy_tcn,axis=0))
+            acc_model[j][i] = acc_model_list[i * iter + j]
+            # entropy_model[j][i] = entropy_model_list[i*iter+j]
+    print(np.mean(acc_model, axis=0))
+    print("acc mean:", np.mean(np.mean(acc_model, axis=0)))
+    # print("entorpy mean:",np.mean(entropy_model,axis=0))
     with open(log_path, 'a') as fp:
         fp.write('PN_HDA: '
-                 + '| avg acc_best = ' + str(np.mean(acc_tcn, axis=0))
+                 + '| avg acc_best = ' + str(np.mean(acc_model, axis=0))
                  + '\n'
                  + str(args)
                  + '\n')
 
-    np.savetxt('results/' + results_name + '.csv', acc_tcn, delimiter=',')
+    np.savetxt('results/' + results_name + '.csv', acc_model, delimiter=',')

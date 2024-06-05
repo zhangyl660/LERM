@@ -1,7 +1,6 @@
 TC = '/data/dataset/hda/Datasets/TextCategorization'
 TI = '/data/dataset/hda/Datasets/T2IClassification'
 KPG = '/data/dataset/hda/Datasets/KPG'
-
 #----------------------------------------------------------------#
 # TextCategorization43
 E = TC + '/Source_EN.mat'
@@ -16,12 +15,10 @@ S20 = TC + '/Target_SP_20.mat'
 # T2IClassification
 SN = TI + '/Source_N.mat'
 TI = TI + '/Target_I.mat'
-
 #----------------------------------------------------------------#
 
-
 #----------------------------------------------------------------#
-
+# KPG datasets
 KPG_E2S5 = KPG + '/Source_E2S5.mat'
 KPG_I2S5 = KPG + '/Source_I2S5.mat'
 KPG_G2S5 = KPG + '/Source_G2S5.mat'

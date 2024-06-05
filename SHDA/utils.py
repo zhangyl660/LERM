@@ -12,19 +12,14 @@ def classifier(X, W):
     return H
 #=========================================================================#
 def get_loss_Xa(Ya, F_Xa):
-
     loss_Xa = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=Ya, logits=F_Xa))
-    
     return loss_Xa
 #--------------------------------------------------------#
 def get_loss_reg(G_Xs, G_Xt, F, tau):
-    
     tf.add_to_collection('loss', tf.contrib.layers.l2_regularizer(tau)(G_Xs['w1']))
     tf.add_to_collection('loss', tf.contrib.layers.l2_regularizer(tau)(G_Xt['w1']))
     tf.add_to_collection('loss', tf.contrib.layers.l2_regularizer(tau)(F['w1']))
-    
     loss_reg = tf.add_n(tf.get_collection("loss"))
-
     return loss_reg
 #--------------------------------------------------------#
 def get_mean_kl_loss(class_mean_Xt):
@@ -33,7 +28,6 @@ def get_mean_kl_loss(class_mean_Xt):
     epsilon = tf.constant(1e-6, tf.float32)
     class_mean_Xt = tf.nn.softmax(class_mean_Xt, axis=1)
     loss_mean_Xt = tf.reduce_mean(-tf.reduce_sum(Yc*tf.log(class_mean_Xt + epsilon),1))
-    
     return loss_mean_Xt
 
 def get_mean_l1_loss(class_mean_Xt):
@@ -53,8 +47,6 @@ def get_mean_l2_loss(class_mean_Xt):
     loss_mean = tf.reduce_mean(tf.square(class_mean_Xt-Yc))
     # loss_mean_Xt = tf.reduce_mean(-tf.reduce_sum(Yc * tf.log(class_mean_Xt + epsilon), 1))
     return loss_mean
-
-
 #--------------------------------------------------------#
 def get_class_mean_Xt(Xl, Xu, Yl, Pred_Xu, nc):
     d = tf.shape(Xl)[1]
