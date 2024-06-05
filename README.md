@@ -21,15 +21,14 @@ pip install -r requirements.txt
 For SHDA
 
 ```shell
-XXXX XXXX XXXX XXXX XXXX XXXX
-
-XXXX XXXX XXXX XXXX XXXX XXXX
-
-XXXX XXXX XXXX XXXX XXXX XXXX
-
-XXXX XXXX XXXX XXXX XXXX XXXX
-
+conda create -n shda
+conda install pandas==1.1.5
+conda install scikit_learn==1.5.0
+conda install scipy==1.5.2
+conda install tensorflow==2.16.1
+conda install tensorflow_gpu==1.15.0
 ```
+
 
 
 ## Usage
