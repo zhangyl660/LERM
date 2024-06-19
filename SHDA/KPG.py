@@ -96,7 +96,7 @@ if __name__ == "__main__":
             config_data = {'Xs': Xs, 'Xl': Xl, 'Xu': Xu, 'Xs_label': Xs_label,
                            'Xl_label': Xl_label, 'Xu_label': Xu_label, 'T': T}
 
-            p = multiprocessing.Process(target=run_tcn, args=(acc_tcn_list, config, config_data))
+            p = multiprocessing.Process(target=run_model, args=(acc_model_list, config, config_data))
             p.start()
             p.join()
             acc_model[j][i] = acc_model_list[i * iter + j]
