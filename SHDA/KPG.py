@@ -7,7 +7,7 @@ import numpy as np
 import argparse
 from sklearn import preprocessing  # Normalization data
 import add_dependencies as ad  # add some dependencies
-from run_tcn import run_tcn
+from run_model import run_model
 
 # Test
 # source_exp = [ad.E, ad.F, ad.G, ad.I]
@@ -58,8 +58,8 @@ if __name__ == "__main__":
     # ===========================================================#
     length = len(source_exp)
     iter = 5  # for test
-    acc_tcn_list = multiprocessing.Manager().list()
-    acc_tcn = np.zeros((iter, length))
+    acc_model_list = multiprocessing.Manager().list()
+    acc_model = np.zeros((iter, length))
 
     for i in range(0, length):
         print("Source domain: " + source_exp[i])
@@ -99,8 +99,8 @@ if __name__ == "__main__":
             p = multiprocessing.Process(target=run_tcn, args=(acc_tcn_list, config, config_data))
             p.start()
             p.join()
-            acc_tcn[j][i] = acc_tcn_list[i * iter + j]
-    print(np.mean(acc_tcn, axis=0))
+            acc_model[j][i] = acc_model_list[i * iter + j]
+    print(np.mean(acc_model, axis=0))
     with open(log_path, 'a') as fp:
         fp.write('PN_HDA: '
                  + '| avg acc_best = ' + str(np.mean(acc_tcn, axis=0))
