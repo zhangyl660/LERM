@@ -13,7 +13,7 @@ from torch.optim.lr_scheduler import LambdaLR
 from torch.utils.data import DataLoader
 
 import utils
-from SSL.tllib.self_training.lerm import LERM
+from tllib.self_training.lerm import LERM
 from tllib.vision.transforms import MultipleApply
 from tllib.utils.metric import accuracy
 from tllib.utils.meter import AverageMeter, ProgressMeter
