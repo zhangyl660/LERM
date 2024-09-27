@@ -1,6 +1,6 @@
 # Rethinking Guidance Information to Utilize Unlabeled Samples: A Label-Encoding Perspective (ICML'24)
 
-Official Implementation of Rethinking Guidance Information to Utilize Unlabeled Samples: A Label-Encoding Perspective.
+Official Implementation of "[Rethinking Guidance Information to Utilize Unlabeled Samples: A Label-Encoding Perspective](https://arxiv.org/abs/2406.02862)".
 
 Yulong Zhang, Yuan Yao, Shuhao Chen, Pengrong Jin, Yu Zhang, Jian Jin, Jiangang Lu.
 
